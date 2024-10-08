@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8465060523203457"
+     crossorigin="anonymous"></script>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2998f86c35a54dfba472dd7ec02a8aff"}'></script><!-- End Cloudflare Web Analytics -->
+    <title>Max's Games</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+        <iframe allowfullscreen width="100%" height="100%" scrolling="no" frameborder="0"
+          style="width:100%;height:800px;margin:0 auto;max-width:100%;text-align:center;overflow:hidden;" src=""
+          allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
+          allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"
+          allowfullscreen="true" scrolling="no" msallowfullscreen="true" id="frame"></iframe>
+      </div>
+  </body>
+  <script>
+    const params = new URLSearchParams(window.location.search)
+    let games;
+    if (params.get("id")) {
+      fetch("https://maxgames.pages.dev/assets/json/gs.json")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          games = data;
+          games.forEach(game => {
+            if (game.id != params.get("id")) return
+            if (game.url == "c") {
+              document.querySelector("#frame").src = "./assets/emu/" + game.url + ".html?sys=" + game.sys + "&g=" +
+                game.g + "&id=" + game.id + "&mc=" + game.mame;
+            } else if (game.url == "u") {
+              document.querySelector("#frame").src = "./assets/unity/" + game.url + ".html?g=" + game.g;
+            } else if (game.url == "fl") {
+              document.querySelector("#frame").src = "./assets/flash/" + game.url + ".html?g=" + game.g;
+            } else if (game.url == "h") {
+              document.querySelector("#frame").src = game.gameurl;
+            }
+          })
+        })
+    }
+  </script>
+</html>
