@@ -1,4 +1,4 @@
-const data = fetch("https://maxgames.pages.dev/assets/json/gs.json")
+const data = fetch("https://seep.eu.org/https://maxgames.pages.dev/assets/json/gs.json")
 .then(function (response) {
     return response.json();
 })
@@ -92,7 +92,7 @@ function sug(val) {
 document.getElementById("search").value = val;
 }
 
-const bobbo = fetch("https://maxgames.pages.dev/assets/json/twothree.json")
+const bobbo = fetch("https://seep.eu.org/https://maxgames.pages.dev/assets/json/twothree.json")
         .then(function (response) {
             return response.json();
         })
