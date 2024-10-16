@@ -119,7 +119,7 @@ body {
     }
     </style>
   </head>
-  <body>
+  <body onload="fullscreen()">
           <div class="content">
             <div class="ad ad-left">
               <script type="text/javascript">
@@ -180,10 +180,9 @@ body {
         })
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var fullscreenButton = document.getElementById('fullscreenButton');
+    var gameContainer = document.getElementById('gameContainer');
 
-    fullscreenButton.addEventListener('click', function() {
+    function fullscreen() {
                 if (gameContainer.requestFullscreen) {
                     gameContainer.requestFullscreen();
                 } else if (gameContainer.webkitRequestFullscreen) {
@@ -191,7 +190,6 @@ body {
                 } else if (gameContainer.msRequestFullscreen) {
                     gameContainer.msRequestFullscreen();
                 }
-            });
-          });
+    };
   </script>
 </html>
