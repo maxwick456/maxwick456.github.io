@@ -1,164 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TER9PV1K89"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TER9PV1K89');
-    </script>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8465060523203457"
      crossorigin="anonymous"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2998f86c35a54dfba472dd7ec02a8aff"}'></script><!-- End Cloudflare Web Analytics -->
     <title>Max's Games</title>
     <style>
-
-body {
-            font-family: Arial, sans-serif;
+        html, body {
             margin: 0;
             padding: 0;
-            background-color: #2e2e2e;
-            color: white;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
         }
-
-        .header {
-            background-color: #333;
-            padding: 10px 20px;
-            text-align: left;
-        }
-
-        .header a {
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-        }
-
-        .categories {
-            background-color: #444;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .categories a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-
-        .game-container {
-            width: 80%;
-            height: 650px; /* Adjusted height */
-            margin: 20px auto;
-            background-color: #555;
-            position: relative;
-            overflow: hidden; /* Hides overflow from the container */
-        }
-
-
-
-        .game-container {
+        iframe {
+            border: none;
             width: 100%;
             height: 100%;
-            background-color: #555;
-            position: relative;
-            overflow: hidden; /* Hides overflow from the container */
         }
-
-        .game-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block; /* Ensuring display block */
-        }
-
-        .game-bar {
-    .fullscreen-button {
-        padding: 5px 10px;
-        background-color: #333;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #444;
-            border-radius: 15px;
-            padding: 10px;
-            margin: 0 auto;
-            width: 80%;
-        }
-
-        .fullscreen-button {
-            padding: 5px 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20px 0;
-    }
-    .ad {
-        width: 120px;
-        height: 300px;
-        background-color: #333;
-        margin: 0 10px;
-    }
-    .game-container {
-        flex-shrink: 0;
-    }
     </style>
   </head>
-  <body onload="fullscreen();">
-          <div class="content">
-            <div class="ad ad-left">
-              <script type="text/javascript">
-                atOptions = {
-                  'key' : 'a294f130135bb9bb338dd1730eb863df',
-                  'format' : 'iframe',
-                  'height' : 600,
-                  'width' : 160,
-                  'params' : {}
-                };
-              </script>
-              <script type="text/javascript" src="//www.topcpmcreativeformat.com/a294f130135bb9bb338dd1730eb863df/invoke.js"></script>
-            </div>
-        <div class="game-container" id="gameContainer">        <iframe allowfullscreen width="100%" height="100%" scrolling="no" frameborder="0"
+  <body>
+        <iframe allowfullscreen width="100%" height="100%" scrolling="no" frameborder="0"
           style="width:100%;height:800px;margin:0 auto;max-width:100%;text-align:center;overflow:hidden;" src=""
           allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
           allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"
-          allowfullscreen="true" scrolling="no" msallowfullscreen="true" id="frame"></iframe></div>
-          <button id="fullscreenButton" class="fullscreen-button">Fullscreen</button>
-            <div class="ad ad-right">
-              <script type="text/javascript">
-                atOptions = {
-                  'key' : 'a294f130135bb9bb338dd1730eb863df',
-                  'format' : 'iframe',
-                  'height' : 600,
-                  'width' : 160,
-                  'params' : {}
-                };
-              </script>
-              <script type="text/javascript" src="//www.topcpmcreativeformat.com/a294f130135bb9bb338dd1730eb863df/invoke.js"></script>
-            </div>
-        </div>
+          allowfullscreen="true" scrolling="no" msallowfullscreen="true" id="frame"></iframe>
       </div>
   </body>
   <script>
     const params = new URLSearchParams(window.location.search)
     let games;
     if (params.get("id")) {
-      fetch("https://seep.eu.org/https://maxgames.pages.dev/assets/json/gs.json")
+      fetch("https://maxgames.pages.dev/assets/json/gs.json")
         .then(function (response) {
           return response.json();
         })
@@ -179,17 +54,5 @@ body {
           })
         })
     }
-
-    var gameContainer = document.getElementById('gameContainer');
-
-    function fullscreen() {
-                if (gameContainer.requestFullscreen) {
-                    gameContainer.requestFullscreen();
-                } else if (gameContainer.webkitRequestFullscreen) {
-                    gameContainer.webkitRequestFullscreen();
-                } else if (gameContainer.msRequestFullscreen) {
-                    gameContainer.msRequestFullscreen();
-                }
-    };
   </script>
 </html>
