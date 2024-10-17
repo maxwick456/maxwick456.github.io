@@ -1,2 +1,0 @@
-# Partners:
-# [Canlite](everyonegetsnews.org/login)![Canlite](https://cdn.discordapp.com/attachments/1295962050899607597/1296556307137953864/pixlr-image-generator-42e6fc26-2f94-478d-9b3c-3d40c0aad15d.png?ex=6712b7a8&is=67116628&hm=f0d0a9e06510c593acc91e8541f04c3e2919e53c918c31e5516a8cf593716cd9&)
