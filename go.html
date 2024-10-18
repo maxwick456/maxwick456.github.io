@@ -9,18 +9,6 @@
     allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
     allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"
     allowfullscreen="true" scrolling="no" msallowfullscreen="true" id="frame"></iframe>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6008532646981241"
-     crossorigin="anonymous"></script>
-<!-- go bar -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6008532646981241"
-     data-ad-slot="4592871848"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
   </div>
   
   </center>
@@ -29,7 +17,7 @@
     const params = new URLSearchParams(window.location.search)
     let games;
     if (params.get("id")) {
-      fetch("maxgames.pages.dev/assets/json/gs.json")
+      fetch("/assets/json/gs.json")
         .then(function (response) {
           return response.json();
         })
