@@ -25,10 +25,6 @@
           games = data;
           games.forEach(game => {
             if (game.id != params.get("id")) return
-            document.querySelector(".route").innerHTML = '<a href="/games.html">GAMES</a> / <a href="/s.html?sys=' +
-              game.badge + '">' + game.badge + '</a> / ' + game.name;
-            document.querySelector("#gameTitle").innerHTML = game.name + " <span class='f-badge'>" + game.badge +
-              "</span>";
             if (game.url == "c") {
               document.querySelector("#frame").src = "/assets/emu/" + game.url + ".html?sys=" + game.sys + "&g=" +
                 game.g + "&id=" + game.id + "&mc=" + game.mame;
