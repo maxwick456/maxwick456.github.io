@@ -65,7 +65,7 @@
         games = data;
         games.forEach(game => {
           if (game.id != params.get("id")) return
-          document.title = `${game.name} / imadejptr`;
+          document.title = `${game.name} / maxgames`;
           document.querySelector(".route").innerHTML = '<a href="/games.html">GAMES</a> / <a href="/s.html?sys=' +
             game.badge + '">' + game.badge + '</a> / ' + game.name;
           document.querySelector("#gameTitle").innerHTML = game.name + " <span class='f-badge'>" + game.badge +
