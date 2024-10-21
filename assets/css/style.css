@@ -909,3 +909,16 @@ the newest games. This bothered me for a bit so I fixed it :)
     right: 15px;
     display: fixed;
 }
+
+.fullScreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--background);
+}
+
+.none{
+    display: none;
+}
