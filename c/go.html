@@ -78,7 +78,7 @@
   const params = new URLSearchParams(window.location.search)
   let games;
   if (params.get("id")) {
-    fetch("/assets/json/gs.json")
+    fetch("..//assets/json/gs.json")
       .then(function (response) {
         return response.json();
       })
@@ -112,6 +112,5 @@
 </script>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/rand.js"></script>
 
 </html>
