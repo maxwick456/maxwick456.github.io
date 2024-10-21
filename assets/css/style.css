@@ -899,3 +899,13 @@ the newest games. This bothered me for a bit so I fixed it :)
     border-radius: 0 4px 4px 0;
     list-style: none;
 }
+
+.adl{
+    left: 15px;
+    display: fixed;
+}
+
+.adr{
+    right: 15px;
+    display: fixed;
+}
