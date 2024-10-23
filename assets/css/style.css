@@ -111,7 +111,7 @@ span {
 
 .list li {
     display: inline-flex;
-    width: 195px;
+    width: 165px;
     padding-right: 12px;
     padding-left: 12px;
     margin-bottom: 24px
@@ -124,9 +124,9 @@ span {
     padding: 0;
     margin: 0;
     width: 100%;
-    min-height: 90px;
+    min-height: 85px;
     box-shadow: 0 .5rem .9rem rgba(0, 0, 0, .15);
-    border-radius: 7px
+    border-radius: 7px;
 }
 
 .list li a:active {
@@ -144,7 +144,7 @@ span {
 .box-title {
     display: block;
     background-color: rgb(var(--box));
-    padding: 5px;
+    padding: 3px;
     text-align: center;
     line-height: 20px;
     font-size: 14px;

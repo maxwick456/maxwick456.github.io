@@ -39,25 +39,6 @@ function RandomGame() {
 }
 
 /**
- * This is the 1st easter egg on the site.
- * This is the freep0rn function
- * @description - if entered in the console, will change the theme into the "clown" theme. With a greeting from Oli The Cop
- * I made this because of the unbelievable amount of horny bastards that wanted me to put porn onto the site, that will never happen.
- */
-function freep0rn() {
-    localStorage.setItem("t", "clown");
-    document.body.setAttribute("t", "clown");
-    document.body.style = "";
-    localStorage.removeItem("theme_color");
-    console.log("                                                                \n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                      \n░░░░░░          ▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒                  \n░░░░░░░░░░░░    ▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒                \n░░░░░░░░░░░░  ░░  ▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒                  \n░░░░░░░░░░░░░░░░    ░░██████████████████░░                    \n░░░░░░░░░░░░░░░░  ░░██████████████████████░░                  \n░░░░░░░░░░░░░░    ░░░░░░██████████████░░░░░░                  \n░░░░░░░░░░░░░░░░  ░░░░▒▒░░▒▒░░░░░░▒▒░░▒▒░░░░                  \n░░░░░░░░░░░░░░░░    ░░░░▒▒░░▒▒▒▒▒▒░░▒▒░░░░                    \n░░░░░░░░░░░░▒▒▒▒▒▒  ░░▒▒░░░░░░░░░░░░░░▒▒░░▒▒▒▒▒▒▒▒▒▒          \n░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    \n  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  \n    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒\n      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒▒▒░░▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  \n      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    \n      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒      \n    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  \n    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████\n    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████\n    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  \n      ▒▒██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████▒▒        \n      ██████████████████        ████████████████████        \n      ██████████████████        ████████████████████        \n      ██████████████████        ████████████████████        \n    ██████████████████            ████████████████████      \n  ████████████████████            ██████████████████████    \n                                                            ");
-    console.log("%cWEE WOO WEE WOO, YOUR UNDER ARREST!", "font-size:36px;color: red");
-    console.log("%cSir, I must send you to the gulag. You are being charged for the amount of dumb and awful decisions you just made.", "color: white");
-    console.log("%cNow I can't arrest you right now because I'm currently on break and this is my me time.", "color: white");
-    console.log("%cSo as punishment for the time being, your theme will be what YOU ARE.", "color: white");
-    console.log("%cstop requesting p0rn you feens, or else oli will arrest ya! :<", "font-size:10px;")
-}
-
-/**
  * This is the 2nd easter egg on the site.
  * This is the luma function
  * @description - if entered in the console, will change the theme to the "luma" theme and a brief history of the site.
@@ -80,7 +61,6 @@ function luma() {
  * The if statement below checks to see if the body of the html page contains "cats", if so then the functions would run.
  * This is done so that there isn't a huge amount of errors because of it not being used in other pages.
  */
-if (document.body.classList.contains("cats")) {
     const bobbo = fetch("/assets/json/twothree.json")
         .then(function (response) {
             return response.json();
@@ -209,9 +189,6 @@ if (document.body.classList.contains("cats")) {
             pcG.appendChild(div);
         }
     }
-} else {
-    console.log("no cats :(") // this only displays if the page doesn't contain cats.
-}
 
 
 let slideIndex = 1;
