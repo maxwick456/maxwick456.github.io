@@ -61,6 +61,39 @@ function luma() {
  * The if statement below checks to see if the body of the html page contains "cats", if so then the functions would run.
  * This is done so that there isn't a huge amount of errors because of it not being used in other pages.
  */
+
+        const mgames = fetch("/assets/json/mobile.json")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (mgames) {
+            mobile(mgames);
+        })
+        .catch(function (err) {
+            console.log("error: " + err);
+        });
+        /**
+        mobile games
+        */
+        function mobile(mgames) {
+        let mg = document.getElementById("mobile");
+        for (let i = 0; i <= mgames.length; i++) {
+            let div = document.createElement("li");
+            div.innerHTML =
+                "<a href=/go.html?id=" +
+                mgames[i].id +
+                ' class="box"><img src="' +
+                mgames[i].thumb +
+                '"' +
+                ' data-loaded="true">' +
+                '<span class="box-title">' +
+                mgames[i].title +
+                "</span></a>";
+            mg.appendChild(div);
+        }
+        }
+
+
     const bobbo = fetch("/assets/json/twothree.json")
         .then(function (response) {
             return response.json();
@@ -188,7 +221,7 @@ function luma() {
                 "</span></a>";
             pcG.appendChild(div);
         }
-    }
+        }
 
 
 let slideIndex = 1;
