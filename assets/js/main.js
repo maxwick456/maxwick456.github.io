@@ -117,7 +117,7 @@ function luma() {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 bobbo[i].id +
-                ' class="box"><img src="https://cdn.glitch.global/a65741ca-e4a3-4b9c-9f87-1568672f0160/' +
+                ' class="box"><img src="https://html.99v.org/img/' +
                 bobbo[i].id +
                 '.' +
                 bobbo[i].img +
@@ -158,7 +158,7 @@ function luma() {
                 div.innerHTML =
                     "<a href=/go.html?id=" +
                     coopie[i].id +
-                    ' class="box"><img src="https://cdn.glitch.global/a65741ca-e4a3-4b9c-9f87-1568672f0160/' +
+                    ' class="box"><img src="https://html.99v.org/img/' +
                     coopie[i].id +
                     '.' +
                     coopie[i].img +
@@ -173,7 +173,7 @@ function luma() {
                 div.innerHTML =
                     "<a href=/go.html?id=" +
                     coopie[i].id +
-                    ' class="box"><img src="https://cdn.glitch.global/a65741ca-e4a3-4b9c-9f87-1568672f0160/' +
+                    ' class="box"><img src="https://html.99v.org/img/' +
                     coopie[i].id +
                     '.' +
                     coopie[i].img +
@@ -210,7 +210,7 @@ function luma() {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 chirpy[i].id +
-                ' class="box"><img src="https://cdn.glitch.global/a65741ca-e4a3-4b9c-9f87-1568672f0160/' +
+                ' class="box"><img src="https://html.99v.org/img/' +
                 chirpy[i].id +
                 '.' +
                 chirpy[i].img +
