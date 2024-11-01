@@ -899,6 +899,7 @@ the newest games. This bothered me for a bit so I fixed it :)
     font-size: 12px;
     border-radius: 0 4px 4px 0;
     list-style: none;
+    visibility: hidden;i
 }
 
 .adl{
