@@ -36,7 +36,7 @@ function search(data) {
             $.each(data, function (key, valu) {
                 if (valu.name.search(expression) != -1) {
                     if (valu.new == "true") {
-                        $('#gs').append('<li><a href=/go.html?id=' +
+                        $('#s').append('<li><a href=/go.html?id=' +
                             valu.id +
                             ' class="box"><img src="https://html.99v.org/img/' +
                             valu.id +
@@ -49,7 +49,7 @@ function search(data) {
                             valu.name +
                             "</span></a></li>");
                     } else {
-                        $('#gs').append("<li><a href=/go.html?id=" +
+                        $('#s').append("<li><a href=/go.html?id=" +
                             valu.id +
                             ' class="box"><img src="https://html.99v.org/img/' +
                             valu.id +
