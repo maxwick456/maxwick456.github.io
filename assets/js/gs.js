@@ -38,7 +38,7 @@ function search(data) {
                     if (valu.new == "true") {
                         $('#s').append('<li><a href=/go.html?id=' +
                             valu.id +
-                            ' class="box"><img src="https://html.99v.org/img/' +
+                            ' class="box"><img src="https://maxwick456.github.io/img/' +
                             valu.id +
                             '.' +
                             valu.img +
@@ -51,7 +51,7 @@ function search(data) {
                     } else {
                         $('#s').append("<li><a href=/go.html?id=" +
                             valu.id +
-                            ' class="box"><img src="https://html.99v.org/img/' +
+                            ' class="box"><img src="https://maxwick456.github.io/img/' +
                             valu.id +
                             '.' +
                             valu.img +
@@ -72,7 +72,7 @@ function search(data) {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
-                ' class="box"><img src="https://html.99v.org/img/' +
+                ' class="box"><img src="https://maxwick456.github.io/img/' +
                 data[i].id +
                 '.' +
                 data[i].img +
@@ -87,7 +87,7 @@ function search(data) {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
-                ' class="box"><img src="https://html.99v.org/img/' +
+                ' class="box"><img src="https://maxwick456.github.io/img/' +
                 data[i].id +
                 '.' +
                 data[i].img +

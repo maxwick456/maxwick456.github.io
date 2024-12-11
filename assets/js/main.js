@@ -117,7 +117,7 @@ function luma() {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 bobbo[i].id +
-                ' class="box"><img src="https://html.99v.org/img/' +
+                ' class="box"><img src="https://maxwick456.github.io/img/' +
                 bobbo[i].id +
                 '.' +
                 bobbo[i].img +
@@ -158,7 +158,7 @@ function luma() {
                 div.innerHTML =
                     "<a href=/go.html?id=" +
                     coopie[i].id +
-                    ' class="box"><img src="https://html.99v.org/img/' +
+                    ' class="box"><img src="https://maxwick456.github.io/img/' +
                     coopie[i].id +
                     '.' +
                     coopie[i].img +
@@ -173,7 +173,7 @@ function luma() {
                 div.innerHTML =
                     "<a href=/go.html?id=" +
                     coopie[i].id +
-                    ' class="box"><img src="https://html.99v.org/img/' +
+                    ' class="box"><img src="https://maxwick456.github.io/img/' +
                     coopie[i].id +
                     '.' +
                     coopie[i].img +
@@ -210,7 +210,7 @@ function luma() {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 chirpy[i].id +
-                ' class="box"><img src="https://html.99v.org/img/' +
+                ' class="box"><img src="https://maxwick456.github.io/img/' +
                 chirpy[i].id +
                 '.' +
                 chirpy[i].img +
