@@ -34,8 +34,7 @@ function search(data) {
             cache: false
         });
         $('#search').keyup(function () {
-            $('#gs').html('');
-            $('#top').html('');
+            $('#s').html('');
             $('#name').val('');
             var searchField = $('#search').val();
             var expression = new RegExp(searchField, "i");
