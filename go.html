@@ -88,7 +88,7 @@
       <h1>
         More Games
       </h1>
-      <h1>Ads dirtbike money 🤑🤑🤑</h1>
+      <h1>Ads🤑🤑🤑</h1>
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6008532646981241"
           crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
@@ -115,64 +115,45 @@
 </body>
 
 <script>
-  const params = new URLSearchParams(window.location.search)
-  let games;
-  if (params.get("id")) {
-    fetch("/assets/json/gs.json")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        games = data;
-        games.forEach(game => {
-          if (game.id != params.get("id")) return
-          document.title = `${game.name} / maxgames`;
-          document.querySelector(".route").innerHTML = '<a href="/games.html">GAMES</a> / <a href="/s.html?sys=' +
-            game.badge + '">' + game.badge + '</a> / ' + game.name;
-          document.querySelector("#gameTitle").innerHTML = game.name + " <span class='f-badge'>" + game.badge +
-            "</span>";
-          if (game.url == "c") {
-            document.querySelector("#frame").src = "/assets/emu/" + game.url + ".html?sys=" + game.sys + "&g=" +
-              game.g + "&id=" + game.id + "&mc=" + game.mame;
-          } else if (game.url == "u") {
-            document.querySelector("#frame").src = "/assets/unity/" + game.url + ".html?g=" + game.g;
-          } else if (game.url == "fl") {
-            document.querySelector("#frame").src = "/assets/flash/" + game.url + ".html?g=" + game.g;
-          } else if (game.url == "h") {
-            document.querySelector("#frame").src = game.gameurl;
-          }
-          document.querySelector("#gid").innerHTML = game.id;
-          document.querySelector("#pub").innerHTML = game.pub;
-          document.querySelector("#year").innerHTML = game.year;
-          document.querySelector("#desc").innerHTML = game.desc +
-            '<br><br>Information retrieved from: "<a href="' + game.source + '">' + game.source + '</a>"';
-        })
-      })
-  }
-  if (params.get("id")) {
-    fetch("/assets/json/mobile.json")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        games = data;
-        games.forEach(mgame => {
-          if (mgame.id != params.get("id")) return
-          document.title = `${mgame.title} / maxgames`;
-          document.querySelector(".route").innerHTML = '<a href="/games.html">GAMES</a> / <a href="/s.html?sys=' +
-            mgame.category + '">' + mgame.category + '</a> / ' + mgame.title;
-          document.querySelector("#gameTitle").innerHTML = mgame.title + " <span class='f-badge'>" + mgame.category +
-            "</span>";
-          
-          document.querySelector("#gid").innerHTML = mgame.id;
-          document.querySelector("#pub").innerHTML = mgame.pub;
-          document.querySelector("#year").innerHTML = mgame.year;
-          document.querySelector("#desc").innerHTML = mgame.description +
-            '<br><br>Information retrieved from: "<a href="' + mgame.source + '">' + mgame.source + '</a>"';
-            document.querySelector("#frame").src = mgame.url;
-        })
-      })
-  }
+export class Utils {
+    constructor(selector) {
+        this.elements = Utils.getSelector(selector);
+        this.element = this.get(0);
+        return this;
+    }
+
+    static getSelector(selector, context) {
+        if (selector && typeof selector !== 'string') {
+            if (selector.length !== undefined) {
+                return selector;
+            }
+            return [selector];
+        }
+        context = context || document;
+
+        // For performance reasons, use getElementById
+        // eslint-disable-next-line no-control-regex
+        const idRegex = /^#(?:[\w-]|\\.|[^\x00-\xa0])*$/;
+        if (idRegex.test(selector)) {
+            const el = document.getElementById(selector.substring(1));
+            return el ? [el] : [];
+        }
+        return [].slice.call(context.querySelectorAll(selector) || []);
+    }
+    get(index) {
+        if (index !== undefined) {
+            return this.elements[index];
+        }
+        return this.elements;
+    }
+}
+
+Utils.eventListeners = {};
+
+export default function $utils(selector) {
+    return new Utils(selector);
+}
+
 </script>
 
 <script src="assets/js/main.js"></script>
