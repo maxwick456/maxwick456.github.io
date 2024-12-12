@@ -43,8 +43,8 @@ function search(data) {
       
             document.querySelector('#top').innerHTML = '';
             document.querySelector('#gs').innerHTML = '';
-            document.querySelector('#name').value ='');
-            var searchField = document.querySelector('#search').value =);
+            document.querySelector('#name').value = '';
+            var searchField = document.querySelector('#search').value = document.getElementById("search");
             var expression = new RegExp(searchField, "i");
             $.forEach(data, function (key, valu) {
         
