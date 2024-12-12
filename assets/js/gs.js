@@ -7,20 +7,14 @@
 
 const data = fetch("/assets/json/gs.json")
     .then(function (response) {
-  
         return response.json();
-}
-)
+    })
     .then(function (data) {
-  
         search(data);
-}
-)
+    })
     .catch(function (err) {
-  
         console.log("error: " + err);
-}
-);
+    });
 
 function search(data) {
     data.sort(function (a, b) {
@@ -34,7 +28,7 @@ function search(data) {
             cache: false
         });
         $('#search').keyup(function () {
-            $('#s').html('');
+            $('#gs').html('');
             $('#name').val('');
             var searchField = $('#search').val();
             var expression = new RegExp(searchField, "i");
@@ -43,7 +37,7 @@ function search(data) {
                     if (valu.new == "true") {
                         $('#gs').append('<li><a href=/go.html?id=' +
                             valu.id +
-                            ' class="box"><img src="https://maxwick456.github.io/img/' +
+                            ' class="box"><img src="https://maxwick456.gituhb.io/img/' +
                             valu.id +
                             '.' +
                             valu.img +
@@ -56,7 +50,7 @@ function search(data) {
                     } else {
                         $('#gs').append("<li><a href=/go.html?id=" +
                             valu.id +
-                            ' class="box"><img src="https://maxwick456.github.io/img/' +
+                            ' class="box"><img src="https://maxwick456.gituhb.io/img/' +
                             valu.id +
                             '.' +
                             valu.img +
@@ -70,17 +64,14 @@ function search(data) {
             });
         });
     });
-
     var mainContainer = document.getElementById("gs");
     for (var i = 0; i <= data.length; i++) {
-    
         var div = document.createElement("li");
         if (data[i].new == "true") {
-      
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
-                ' class="box"><img src="https://maxwick456.github.io/img/' +
+                ' class="box"><img src="https://maxwick456.gituhb.io/img/' +
                 data[i].id +
                 '.' +
                 data[i].img +
@@ -91,13 +82,11 @@ function search(data) {
                 data[i].name +
                 "</span></a>";
             mainContainer.appendChild(div);
-    }
-     else {
-      
+        } else {
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
-                ' class="box"><img src="https://maxwick456.github.io/img/' +
+                ' class="box"><img src="https://maxwick456.gituhb.io/img/' +
                 data[i].id +
                 '.' +
                 data[i].img +
@@ -107,19 +96,14 @@ function search(data) {
                 data[i].name +
                 "</span></a>";
             mainContainer.appendChild(div);
-    }
-    
+        }
         count();
-  }
-  
+    }
     function count() {
-    
         document.getElementById("libtot").innerHTML = "There are " + data.length + " games to choose from!";
-  }
-
-
+    }
+}
 
 function sug(val) {
-  
     document.getElementById("search").value = val;
-}}
+}
