@@ -7,36 +7,52 @@
 
 const data = fetch("/assets/json/gs.json")
     .then(function (response) {
+  
         return response.json();
-    })
+}
+)
     .then(function (data) {
+  
         search(data);
-    })
+}
+)
     .catch(function (err) {
+  
         console.log("error: " + err);
-    });
+}
+);
 
 function search(data) {
+  
     data.sort(function (a, b) {
+    
         a = a.name.toLowerCase();
         b = b.name.toLowerCase();
 
         return a < b ? -1 : a > b ? 1 : 0;
-    });
-    $(document).ready(function () {
+  }
+  );
+    document.querySelector(document).ready(function () {
+    
         $.ajaxSetup({
+      
             cache: false
-        });
-        $('#search').keyup(function () {
-            $('#top').html('');
-            $('#gs').html('');
-            $('#name').val('');
-            var searchField = $('#search').val();
+    }
+    );
+        document.querySelector('#search').keyup(function () {
+      
+            document.querySelector('#top').innerHTML = '';
+            document.querySelector('#gs').innerHTML = '';
+            document.querySelector('#name').value ='');
+            var searchField = document.querySelector('#search').value =);
             var expression = new RegExp(searchField, "i");
-            $.each(data, function (key, valu) {
+            $.forEach(data, function (key, valu) {
+        
                 if (valu.name.search(expression) != -1) {
+          
                     if (valu.new == "true") {
-                        $('#s').append('<li><a href=/go.html?id=' +
+            
+                        document.querySelector('#s').insertAdjacentHTML("beforeend",'<li><a href=/go.html?id=' +
                             valu.id +
                             ' class="box"><img src="https://maxwick456.github.io/img/' +
                             valu.id +
@@ -48,8 +64,10 @@ function search(data) {
                             '</div><span class="box-title">' +
                             valu.name +
                             "</span></a></li>");
-                    } else {
-                        $('#s').append("<li><a href=/go.html?id=" +
+          }
+           else {
+            
+                        document.querySelector('#s').insertAdjacentHTML("beforeend","<li><a href=/go.html?id=" +
                             valu.id +
                             ' class="box"><img src="https://maxwick456.github.io/img/' +
                             valu.id +
@@ -60,15 +78,20 @@ function search(data) {
                             '</div><span class="box-title">' +
                             valu.name +
                             "</span></a></li>");
-                    }
-                }
-            });
-        });
-    });
+          }
+        }
+      }
+      );
+    }
+    );
+  }
+  );
     var mainContainer = document.getElementById("gs");
     for (var i = 0; i <= data.length; i++) {
+    
         var div = document.createElement("li");
         if (data[i].new == "true") {
+      
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
@@ -83,7 +106,9 @@ function search(data) {
                 data[i].name +
                 "</span></a>";
             mainContainer.appendChild(div);
-        } else {
+    }
+     else {
+      
             div.innerHTML =
                 "<a href=/go.html?id=" +
                 data[i].id +
@@ -97,14 +122,19 @@ function search(data) {
                 data[i].name +
                 "</span></a>";
             mainContainer.appendChild(div);
-        }
+    }
+    
         count();
-    }
+  }
+  
     function count() {
+    
         document.getElementById("libtot").innerHTML = "There are " + data.length + " games to choose from!";
-    }
+  }
 }
 
+
 function sug(val) {
+  
     document.getElementById("search").value = val;
 }

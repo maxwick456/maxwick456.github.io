@@ -12,31 +12,42 @@ document.body.setAttribute("t", t);
  * @description - when clicked will take the user to a random game on the website.
  */
 function RandomGame() {
+  
     fetch("/assets/json/gs.json")
         .then(function (response) {
+    
             return response.json();
-        })
+  }
+  )
         .then(function (data) {
+    
             rg(data);
-        })
+  }
+  )
         .catch(function (err) {
+    
             console.log("error: " + err);
-        });
+  }
+  );
     /**
      * This is the rg function
      * @description - It takes the data from gs.json and helps send the user to the randomly chosen game.
-     * @param {*} data - the data that is being passed through.
+     * @param {
+    *
+  }
+   data - the data that is being passed through.
      */
     function rg(data) {
+    
         // rand takes the data length and generates a random number from said data length
         // example: if the length is 690, then it would put out any number between 1-690
         let rand = Math.floor(Math.random() * (data.length + 1));
         // then it sends the user to the id of the random value that is generated from rand.
         location.href =
             "/go.html?id=" + data[rand].id;
-    }
-
+  }
 }
+
 
 /**
  * This is the 2nd easter egg on the site.
@@ -45,6 +56,7 @@ function RandomGame() {
  * Luma used to be the original name of the site, so I wanted to dedicate a neat easter egg to pay homage to the start of the site.
  */
 function luma() {
+  
     localStorage.setItem("t", "luma");
     document.body.setAttribute("t", "luma");
     document.body.style = "";
@@ -53,6 +65,7 @@ function luma() {
     console.log("%cLUMA was the code name for a project that I was working on during my last year in high school at the start of 2022. Didn't have much purpose but to test out how url values could affect the values shown on the page. This project would later become what is known now as imadejptr.", "color: pink; font-size:24px;");
     console.log("%cThis theme was made to pay homage to the original goal of the website and how it changed from what it was then and what it is now. The website is still up on https://jptr.glitch.me", "color: lightgreen; font-size:24px;")
 }
+
 
 /**
  * This is one of three json fetchers.
@@ -64,20 +77,28 @@ function luma() {
 
         const mgames = fetch("/assets/json/mobile.json")
         .then(function (response) {
+  
             return response.json();
-        })
+}
+)
         .then(function (mgames) {
+  
             mobile(mgames);
-        })
+}
+)
         .catch(function (err) {
+  
             console.log("error: " + err);
-        });
+}
+);
         /**
         mobile games
         */
         function mobile(mgames) {
+  
         let mg = document.getElementById("mobile");
         for (let i = 0; i <= mgames.length; i++) {
+    
             let div = document.createElement("li");
             div.innerHTML =
                 "<a href=/go.html?id=" +
@@ -90,29 +111,41 @@ function luma() {
                 mgames[i].title +
                 "</span></a>";
             mg.appendChild(div);
-        }
-        }
+  }
+}
+
 
 
     const bobbo = fetch("/assets/json/twothree.json")
         .then(function (response) {
+  
             return response.json();
-        })
+}
+)
         .then(function (bobbo) {
+  
             hot(bobbo);
-        })
+}
+)
         .catch(function (err) {
+  
             console.log("error: " + err);
-        });
+}
+);
     /**
      * This is the hot function
      * @description - this is the function that displays the hottest/best games on the website.
-     * @param {*} bobbo - represents the data being passed through
+     * @param {
+  *
+}
+ bobbo - represents the data being passed through
      */
     function hot(bobbo) {
+  
         let hotG = document.getElementById("hot");
         // originally it would be 15, but for this special update it will 30.
         for (let i = 0; i < 100; i++) {
+    
             let div = document.createElement("li");
             div.innerHTML =
                 "<a href=/go.html?id=" +
@@ -127,33 +160,48 @@ function luma() {
                 bobbo[i].name +
                 "</span></a>";
             hotG.appendChild(div);
-        }
-    }
+  }
+}
+
 
     const coopie = fetch("/assets/json/gs.json")
         .then(function (response) {
+  
             return response.json();
-        })
+}
+)
         .then(function (coopie) {
+  
             news(coopie);
-        })
+}
+)
         .catch(function (err) {
+  
             console.log("error: " + err);
-        });
+}
+);
     /**
      * This is the new games function
      * @description - this function displays the newest games that are added to the website.
-     * @param {*} coopie - represents the data being passed through
+     * @param {
+  *
+}
+ coopie - represents the data being passed through
      */
 
     function news(coopie) {
+  
         coopie.sort(function (a, b) {
+    
             return b.id - a.id
-        })
+  }
+  )
         let newG = document.getElementById("new");
         for (let i = 0; i < 15; i++) {
+    
             let div = document.createElement("li");
             if (coopie[i].new == "true") {
+      
                 div.className = "new-class";
                 div.innerHTML =
                     "<a href=/go.html?id=" +
@@ -169,7 +217,9 @@ function luma() {
                     coopie[i].name +
                     "</span></a>";
                 newG.appendChild(div);
-            } else {
+    }
+     else {
+      
                 div.innerHTML =
                     "<a href=/go.html?id=" +
                     coopie[i].id +
@@ -183,29 +233,41 @@ function luma() {
                     coopie[i].name +
                     "</span></a>";
                 newG.appendChild(div);
-            }
-        }
     }
+  }
+}
+
 
     const chirpy = fetch("/assets/json/pc.json")
         .then(function (response) {
+  
             return response.json();
-        })
+}
+)
         .then(function (chirpy) {
+  
             pc(chirpy);
-        })
+}
+)
         .catch(function (err) {
+  
             console.log("error: " + err);
-        });
+}
+);
     /**
      * This is the players choice function
      * @description - this function displays whatever games that the chosen discord user plays on imadejptr.
      * if YOU 🫵 want to show off your favorite games, hate to plug in a js doc but 👉 https://dsc.gg/imj
-     * @param {*} chirpy - represents the data being passed through
+     * @param {
+  *
+}
+ chirpy - represents the data being passed through
      */
     function pc(chirpy) {
+  
         let pcG = document.getElementById("pc");
         for (let i = 0; i <= chirpy.length; i++) {
+    
             let div = document.createElement("li");
             div.innerHTML =
                 "<a href=/go.html?id=" +
@@ -220,8 +282,9 @@ function luma() {
                 chirpy[i].name +
                 "</span></a>";
             pcG.appendChild(div);
-        }
-        }
+  }
+}
+
 
 
 let slideIndex = 1;
@@ -229,10 +292,13 @@ let myTimer;
 let slideshowContainer;
 
 window.addEventListener("load", function () {
+  
     showSlides(slideIndex);
     myTimer = setInterval(function () {
+    
         plusSlides(1)
-    }, 4000);
+  }
+  , 4000);
 
     //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
     slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
@@ -242,66 +308,99 @@ window.addEventListener("load", function () {
 
     slideshowContainer.addEventListener('mouseenter', pause)
     slideshowContainer.addEventListener('mouseleave', resume)
-})
+}
+)
 
 // NEXT AND PREVIOUS CONTROL
 function plusSlides(n) {
+  
     clearInterval(myTimer);
     if (n < 0) {
+    
         showSlides(slideIndex -= 1);
-    } else {
+  }
+   else {
+    
         showSlides(slideIndex += 1);
-    }
+  }
+  
 
     //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
 
     if (n === -1) {
+    
         myTimer = setInterval(function () {
+      
             plusSlides(n + 2)
-        }, 4000);
-    } else {
-        myTimer = setInterval(function () {
-            plusSlides(n + 1)
-        }, 4000);
     }
+    , 4000);
+  }
+   else {
+    
+        myTimer = setInterval(function () {
+      
+            plusSlides(n + 1)
+    }
+    , 4000);
+  }
 }
+
 
 //Controls the current slide and resets interval if needed
 function currentSlide(n) {
+  
     clearInterval(myTimer);
     myTimer = setInterval(function () {
+    
         plusSlides(n + 1)
-    }, 4000);
+  }
+  , 4000);
     showSlides(slideIndex = n);
 }
 
+
 function showSlides(n) {
+  
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
     if (n > slides.length) {
+    
         slideIndex = 1
-    }
+  }
+  
     if (n < 1) {
+    
         slideIndex = slides.length
-    }
+  }
+  
     for (i = 0; i < slides.length; i++) {
+    
         slides[i].style.display = "none";
-    }
+  }
+  
     for (i = 0; i < dots.length; i++) {
+    
         dots[i].className = dots[i].className.replace(" active", "");
-    }
+  }
+  
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
 
+
 pause = () => {
+  
     clearInterval(myTimer);
 }
 
+
 resume = () => {
+  
     clearInterval(myTimer);
     myTimer = setInterval(function () {
+    
         plusSlides(slideIndex)
-    }, 4000);
+  }
+  , 4000);
 }
