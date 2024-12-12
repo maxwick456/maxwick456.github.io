@@ -6,102 +6,68 @@
  */
 
 const data = fetch("/assets/json/gs.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+    .then(response => response.json())
+    .then(data => {
         search(data);
+        displayAllGames(data); // Display all games initially
     })
-    .catch(function (err) {
+    .catch(err => {
         console.log("error: " + err);
     });
 
 function search(data) {
-    data.sort(function (a, b) {
-        a = a.name.toLowerCase();
-        b = b.name.toLowerCase();
+    data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
-        return a < b ? -1 : a > b ? 1 : 0;
-    });
-    $(document).ready(function () {
-        $.ajaxSetup({
-            cache: false
-        });
-        $('#search').keyup(function () {
-            $('#gs').html('');
-            $('#name').val('');
-            var searchField = $('#search').val();
-            var expression = new RegExp(searchField, "i");
-            $.each(data, function (key, valu) {
-                if (valu.name.search(expression) != -1) {
-                    if (valu.new == "true") {
-                        $('#gs').append('<li><a href=/go.html?id=' +
-                            valu.id +
-                            ' class="box"><img src="https://maxwick456.github.io/img/' +
-                            valu.id +
-                            '.' +
-                            valu.img +
-                            '" data-loaded="true"><div class="badge">' +
-                            valu.badge +
-                            '</div><div class="new-badge">NEW!' +
-                            '</div><span class="box-title">' +
-                            valu.name +
-                            "</span></a></li>");
-                    } else {
-                        $('#gs').append("<li><a href=/go.html?id=" +
-                            valu.id +
-                            ' class="box"><img src="https://maxwick456.github.io/img/' +
-                            valu.id +
-                            '.' +
-                            valu.img +
-                            '" data-loaded="true"><div class="badge">' +
-                            valu.badge +
-                            '</div><span class="box-title">' +
-                            valu.name +
-                            "</span></a></li>");
-                    }
+    $(document).ready(() => {
+        $.ajaxSetup({ cache: false });
+
+        let timeout; // Variable to hold the timeout ID
+
+        $('#search').on('keyup', function () {
+            clearTimeout(timeout); // Clear the previous timeout
+            const searchField = $(this).val();
+            timeout = setTimeout(() => {
+                if (searchField === '') {
+                    $('#gs').html(''); // Clear previous results
+                    displayAllGames(data); // Show all games if search is empty
+                } else {
+                    $('#gs').html(''); // Clear previous results
+                    const expression = new RegExp(searchField, "i");
+                    $.each(data, (key, valu) => {
+                        if (valu.name.search(expression) !== -1) {
+                            appendGameToList(valu);
+                        }
+                    });
                 }
-            });
+            }, 300); // Delay in milliseconds
         });
     });
-    var mainContainer = document.getElementById("gs");
-    for (var i = 0; i <= data.length; i++) {
-        var div = document.createElement("li");
-        if (data[i].new == "true") {
-            div.innerHTML =
-                "<a href=/go.html?id=" +
-                data[i].id +
-                ' class="box"><img src="https://maxwick456.github.io/img/' +
-                data[i].id +
-                '.' +
-                data[i].img +
-                '" data-loaded="true"><div class="badge">' +
-                data[i].badge +
-                '</div><div class="new-badge">NEW!' +
-                '</div><span class="box-title">' +
-                data[i].name +
-                "</span></a>";
-            mainContainer.appendChild(div);
-        } else {
-            div.innerHTML =
-                "<a href=/go.html?id=" +
-                data[i].id +
-                ' class="box"><img src="https://maxwick456.github.io/img/' +
-                data[i].id +
-                '.' +
-                data[i].img +
-                '" data-loaded="true"><div class="badge">' +
-                data[i].badge +
-                '</div><span class="box-title">' +
-                data[i].name +
-                "</span></a>";
-            mainContainer.appendChild(div);
-        }
-        count();
-    }
-    function count() {
-        document.getElementById("libtot").innerHTML = "There are " + data.length + " games to choose from!";
-    }
+}
+
+function displayAllGames(data) {
+    const mainContainer = document.getElementById("gs");
+    data.forEach(valu => {
+        appendGameToList(valu);
+    });
+    count(data.length); // Update the count of games
+}
+
+function appendGameToList(valu) {
+    const mainContainer = document.getElementById("gs");
+    const div = document.createElement("li");
+    div.innerHTML = `
+        <a href="/go.html?id=${valu.id}" class="box">
+            <img src="https://maxwick456.github.io/img/${valu.id}.${valu.img}" data-loaded="true">
+            <div class="badge">${valu.badge}</div>
+            ${valu.new === "true" ? '<div class="new-badge">NEW!</div>' : ''}
+            <span class="box-title">${valu.name}</span>
+        </a>
+    `;
+    mainContainer.appendChild(div);
+}
+
+function count(total) {
+    document.getElementById("libtot").innerHTML = `There are ${total} games to choose from!`;
 }
 
 function sug(val) {
