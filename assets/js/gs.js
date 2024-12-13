@@ -19,7 +19,6 @@ function search(data) {
     data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
     $(document).ready(() => {
-        $.ajaxSetup({ cache: false });
 
         let timeout; // Variable to hold the timeout ID
 
