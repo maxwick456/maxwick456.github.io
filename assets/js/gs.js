@@ -28,10 +28,10 @@ function search(data) {
             const searchField = $(this).val();
             timeout = setTimeout(() => {
                 if (searchField === '') {
-                    $('#gs').html(''); // Clear previous results
+                    $('#s').html(''); // Clear previous results
                     displayAllGames(data); // Show all games if search is empty
                 } else {
-                    $('#gs').html(''); // Clear previous results
+                    $('#s').html(''); // Clear previous results
                     const expression = new RegExp(searchField, "i");
                     $.each(data, (key, valu) => {
                         if (valu.name.search(expression) !== -1) {
