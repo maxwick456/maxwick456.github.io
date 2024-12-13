@@ -12,6 +12,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 200px;
+    text-align: center;
 }
 
 #nav {
@@ -111,7 +112,7 @@ span {
 
 .list li {
     display: inline-flex;
-    width: 165px;
+    width: 150px;
     padding-right: 12px;
     padding-left: 12px;
     margin-bottom: 24px
@@ -124,7 +125,7 @@ span {
     padding: 0;
     margin: 0;
     width: 100%;
-    min-height: 85px;
+    min-height: 35px;
     box-shadow: 0 .5rem .9rem rgba(0, 0, 0, .15);
     border-radius: 7px;
 }
@@ -136,7 +137,7 @@ span {
 .box img {
     float: left;
     width: 100%;
-    height: 160px;
+    height: 140px;
     object-fit: cover;
     border-radius: 7px 7px 0 0
 }
@@ -176,6 +177,10 @@ a.box {
 
 }
 
+
+/*
+Just don't touch this lol
+*/
 .badge {
     font-family: 'Source Code Pro', monospace;
     position: absolute;
@@ -237,10 +242,10 @@ a.box {
 #search {
     width: 60%;
     box-sizing: border-box;
-    border: 4px solid var(--theme);
+    border: none;
     border-radius: 20px;
     font-size: 16px;
-    background-color: #00151f;
+    background-color: #302f2f;
     color: white;
     padding: 12px 20px 12px 20px;
     margin: auto;
@@ -899,7 +904,7 @@ the newest games. This bothered me for a bit so I fixed it :)
     font-size: 12px;
     border-radius: 0 4px 4px 0;
     list-style: none;
-    visibility: hidden;i
+    visibility: hidden;
 }
 
 .adl{
@@ -923,4 +928,13 @@ the newest games. This bothered me for a bit so I fixed it :)
 
 .none{
     display: none;
+}
+
+.alert{
+    background-color: #962626;
+    padding: 1px;
+    width: fit-content;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: rgba(172, 0, 0, 0.7) 0px 5px 15px 6px;
 }

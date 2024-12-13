@@ -1,74 +1,69 @@
-/**
- * gs.js
- * @description - This is used to generate the games that are relating to the system that the user chooses.
- * This is different compared to sys.js because sys.js is for the games that are specific to the system it supports
- * This generates every single game and is used on all.html.
- */
+let gameData = []; // Global variable to hold the game data
 
-const data = fetch("/assets/json/gs.json")
-    .then(response => response.json())
+// Fetch the game data from the JSON file
+fetch("/assets/json/gs.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
-        search(data);
-        displayAllGames(data); // Display all games initially
+        gameData = data; // Store the fetched data
+        displayAllGames(gameData); // Display all games initially
+        setupSearch(gameData); // Set up the search functionality
     })
     .catch(err => {
-        console.log("error: " + err);
+        console.error("Fetch error: ", err);
     });
 
-function search(data) {
-    data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-
-    $(document).ready(() => {
-
-        let timeout; // Variable to hold the timeout ID
-
-        $('#search').on('keyup', function () {
-            clearTimeout(timeout); // Clear the previous timeout
-            const searchField = $(this).val();
-            timeout = setTimeout(() => {
-                if (searchField === '') {
-                    $('#s').html(''); // Clear previous results
-                    displayAllGames(data); // Show all games if search is empty
-                } else {
-                    $('#s').html(''); // Clear previous results
-                    const expression = new RegExp(searchField, "i");
-                    $.each(data, (key, valu) => {
-                        if (valu.name.search(expression) !== -1) {
-                            appendGameToList(valu);
-                        }
-                    });
-                }
-            });
-        });
-    });
-}
-
+// Function to display all games
 function displayAllGames(data) {
     const mainContainer = document.getElementById("gs");
-    data.forEach(valu => {
-        appendGameToList(valu);
+    mainContainer.innerHTML = ''; // Clear previous games
+    data.forEach(game => {
+        appendGameToList(game, mainContainer);
     });
-    count(data.length); // Update the count of games
+    updateGameCount(data.length); // Update the count of games
 }
 
-function appendGameToList(valu) {
-    const mainContainer = document.getElementById("gs");
-    const div = document.createElement("li");
-    div.innerHTML = `
-        <a href="/go.html?id=${valu.id}" class="box">
-            <img src="https://maxwick456.github.io/img/${valu.id}.${valu.img}" data-loaded="true">
-            <div class="badge">${valu.badge}</div>
-            ${valu.new === "true" ? '<div class="new-badge">NEW!</div>' : ''}
-            <span class="box-title">${valu.name}</span>
+// Function to append a game to the list
+function appendGameToList(game, container) {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+        <a href="/go.html?id=${game.id}" class="box">
+            <img src="https://maxwick456.github.io/img/${game.id}.${game.img}" alt="${game.name}">
+            <div class="badge">${game.badge}</div>
+            ${game.new === "true" ? '<div class="new-badge">NEW!</div>' : ''}
+            <span class="box-title">${game.name}</span>
         </a>
     `;
-    mainContainer.appendChild(div);
+    container.appendChild(listItem);
 }
 
-function count(total) {
+// Function to update the count of games
+function updateGameCount(total) {
     document.getElementById("libtot").innerHTML = `There are ${total} games to choose from!`;
 }
 
-function sug(val) {
-    document.getElementById("search").value = val;
+// Function to set up the search functionality
+function setupSearch(data) {
+    const searchInput = document.getElementById('search');
+    const resultsContainer = document.getElementById('s'); // Container for search results
+
+    searchInput.addEventListener('keyup', function () {
+        const searchField = this.value.trim().toLowerCase(); // Get the trimmed and lowercased value
+        resultsContainer.innerHTML = ''; // Clear previous search results
+
+        if (searchField === '') {
+            displayAllGames(data); // Show all games if search field is empty
+            updateGameCount(data.length); // Update count to total games
+        } else {
+            const filteredGames = data.filter(game => game.name.toLowerCase().includes(searchField));
+            filteredGames.forEach(game => {
+                appendGameToList(game, resultsContainer); // Append to the search results container
+            });
+            updateGameCount(filteredGames.length); // Update count to the number of filtered games
+        }
+    });
 }
