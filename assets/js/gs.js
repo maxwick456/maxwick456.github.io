@@ -38,7 +38,7 @@ function search(data) {
                         }
                     });
                 }
-            }, 300); // Delay in milliseconds
+            });
         });
     });
 }
