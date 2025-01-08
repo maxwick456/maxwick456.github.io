@@ -18,7 +18,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TC99PBQG');</script>
-  <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Max's Games" property="og:title">
@@ -27,23 +27,10 @@
     html {overflow: auto;}
     html, body, div, iframe {margin: 0px; padding: 0px; height: 100%; border: none;}
     iframe {display: block; width: 100%; border: none; overflow-y: auto; overflow-x: hidden;}
-    .ad-container { text-align: center; margin: 10px 0; } /* Center the ads and add margin */
   </style>
-  <link href="favicon.ico" rel="icon" type="image/x-icon">
+      <link href="favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
-  <!-- First Ad Placement Above the Iframe -->
-  <div class="ad-container">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-format="autorelaxed"
-         data-ad-client="ca-pub-9031739208694417"
-         data-ad-slot="6032793019"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
   <iframe src=""
   frameborder="0" 
   marginheight="0" 
@@ -52,25 +39,10 @@
   height="100%" 
   scrolling="auto"
   id="frame"></iframe>
-
-  <!-- Second Ad Placement Below the Iframe -->
-  <div class="ad-container">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-9031739208694417"
-         data-ad-slot="5544578552"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TC99PBQG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TC99PBQG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
 </body>
 
 <script>
@@ -87,7 +59,7 @@ if (gameId) {
       if (game) {
         document.title = `${game.name} / Max's Games`;
         if (game.url === "c") {
-          document.querySelector("#frame ").src = `/assets/emu/${game.url}.html?sys=${game.sys}&g=${game.g}&id=${game.id}&mc=${game.mame}`;
+          document.querySelector("#frame").src = `/assets/emu/${game.url}.html?sys=${game.sys}&g=${game.g}&id=${game.id}&mc=${game.mame}`;
         } else if (game.url === "u") {
           document.querySelector("#frame").src = `/assets/unity/${game.url}.html?g=${game.g}`;
         } else if (game.url === "fl") {
@@ -123,5 +95,6 @@ if (gameId) {
 }
 </script>
 
+</body>
 <script src="assets/js/main.js"></script>
 </html>
