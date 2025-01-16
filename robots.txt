@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: 
 Disallow: /assets/
-Sitemap: https://99v.org/sitemap.xml
+Sitemap: /sitemap.xml
