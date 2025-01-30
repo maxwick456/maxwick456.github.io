@@ -1,17 +1,10 @@
 [
     {
         "gameurl": "https://html.99v.org/html/golf orbit/index.html",
-        "imgSrc": "https://maxwick456.github.io/dimg/golf orbit.jpg",
+        "img": "https://maxwick456.github.io/dimg/golf orbit.jpg",
         "name": "golf orbit",
         "page": 3,
         "id": 8011
-      },
-    {
-        "gameurl": "https://html.99v.org/html/bit planes/index.html",
-        "img": "https://maxwick456.github.io/dimg/bit planes.jpg",
-        "name": "bit planes",
-        "page": 3,
-        "id": 8047
       },
     {
         "gameurl": "https://html.99v.org/html/polytrack/index.html",
